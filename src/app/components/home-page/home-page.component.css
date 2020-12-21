@@ -1,0 +1,74 @@
+#pageRoute {
+    position: absolute;
+    left: 50%;
+    width: calc(100% - 20px);
+    height: calc(100vh - 50px);
+    /* z-index: 3; */
+    background-color: #FFF;
+    margin: auto;
+    transform: translateX(-50%);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: top 0.5s ease-in-out;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-content: stretch;
+    /* align-items: center; */
+    /* grid-gap: 40px; */
+}
+
+#pageHeader {
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    justify-items: center;
+    align-items: center;
+    height: 3rem;
+    margin-top: 1rem;
+    padding: 0rem 1rem;
+    border-bottom: 1px solid #888;
+    box-shadow: 0 5px 10px -5px #333;
+}
+
+#pageHeader #backButton {
+   width: 2rem;
+   height: 2rem;
+   transition: all ease-in-out 200ms;
+}
+
+#pageHeader #backButton:hover {
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 5px;
+ }
+
+
+#pageHeader #profileDiv {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 2rem;
+    height: 2rem;
+}
+
+#pageHeader #backButton img, #pageHeader #profileDiv img {
+    width: 100%;
+}
+
+.pageRouteShow {
+    top: 50px;
+}
+
+.pageRouteHide {
+    top: 110%;
+}
+
+#homeFil, #cookFil, #maidFil, #login, #register {
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 5px solid red; */
+}
+
+router-outlet {
+    position: absolute;
+}

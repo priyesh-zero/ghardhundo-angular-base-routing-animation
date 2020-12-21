@@ -1,0 +1,34 @@
+<div id="homeLayout">
+  <div id="logoHeader">
+    <h1 class="fontHead">ghardhundho</h1>
+    <h3 class="fontHead">.com</h3>
+  </div>
+  <div id="slideShow" class="fontHead" >
+    <div id="controls" [ngClass]="{'hide':state.pageRouteBool.filOpen,'show': !state.pageRouteBool.filOpen}">
+      <div id="left" (click)="prevSlide()">&lt;</div>
+      <div id="right" (click)="nextSlide()">&gt;</div>
+    </div>
+    <div id="slides" class="fontHead" [ngClass]="{'hide':state.pageRouteBool.filOpen,'show': !state.pageRouteBool.filOpen}">
+        <div class="slideShowSlides" id='s1' >
+          <h1 class="fontSubHead">Homes</h1>
+          <p>Get the best homes without any hassle, not satisfied by the photos make and appointment free of charge.</p>
+          <a [routerLink]="['/homes']">Start Browsing</a>
+        </div>
+        <div class="slideShowSlides out" id='s2' >
+          <h1 class="fontSubHead">Cooks</h1>
+          <p>Best Cooks with reviews from users who have already have had pleasure of the delicious food of these cooks</p>
+          <a [routerLink]="['/cooks']">Start Slicing and Dicing</a>
+        </div>
+        <div class="slideShowSlides out" id='s3' >
+          <h1 class="fontSubHead">Maids</h1>
+          <p>Managing your homes can be difficult, believe us we know, hence here are professionals to help you with your homes.</p>
+          <a [routerLink]="['/maids']">Start Living Beautiful</a>
+        </div>
+    </div>
+    <div id="footer" class="fontSubHead" [ngClass]="{'hide':state.pageRouteBool.filOpen,'show': !state.pageRouteBool.filOpen}">
+      <div>22+ <br /> Cities</div>
+      <div>1500+ <br /> Properties</div>
+      <div>7000+ <br /> Clients</div>
+    </div>
+  </div>
+</div>

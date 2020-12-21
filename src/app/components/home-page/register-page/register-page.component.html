@@ -1,0 +1,111 @@
+<div id="container">
+  <h2 class="fontHead" style="color: #333;" >Sign Up</h2>
+  <div id="slideForms">
+    <div id="userForm">
+        <h3 class="fontSubHead" style="color: #333;" >Account Details</h3>        
+        <div class="form-group">
+            <input 
+                type="email" 
+                id="email" 
+                [ngClass]="{'value': email!=='', 'error': error }" 
+                [(ngModel)]="email"/>
+            <label for="email" >Email : </label>
+            <hr>
+            <div id="load" *ngIf="validation" class="load-email"></div>
+          </div>
+          <div class="form-group">
+              <input 
+                  type="password" 
+                  id="password" 
+                  [ngClass]="{'value': password!=='', 'error': error  }" 
+                  [(ngModel)]="password"/>
+              <label for="password" >Password : </label>
+              <hr>
+              <div id="load" *ngIf="validation" class="load-password"></div>
+          </div>
+          <div class="form-group">
+            <input 
+                type="password" 
+                id="cpassword" 
+                [ngClass]="{'value': cpassword!=='', 'error': error  }" 
+                [(ngModel)]="cpassword"/>
+            <label for="cpassword" >Confirm Password : </label>
+            <hr>
+            <div id="load" *ngIf="validation" class="load-password"></div>
+          </div>
+          <div class="form-group">
+              <button id="submitButton" (click)="nextStep()" [attr.disabled]="disable ? '' : null" >
+                  <span id="submitText" *ngIf="!formFetch">Next</span>
+                  <span id="submitLoad" *ngIf="formFetch"></span>
+              </button>
+          </div>
+    </div>
+    <div id="personalForm">
+        <h3 class="fontSubHead" style="color: #333;" >User Details</h3>
+        <div class="form-group">
+            <input 
+                type="text" 
+                id="fname" 
+                [ngClass]="{'value': firstName!=='', 'error': error }" 
+                [(ngModel)]="firstName"/>
+            <label for="fname" >First Name : </label>
+            <hr>
+        </div>
+        <div class="form-group">
+          <input 
+              type="text" 
+              id="lname" 
+              [ngClass]="{'value': lastName!=='', 'error': error }" 
+              [(ngModel)]="lastName"/>
+          <label for="lname" >Last Name : </label>
+          <hr>
+        </div>
+        <div class="form-group">
+          <label id="dateLabel" for="date" >Date of Birth : </label>
+          <input 
+              type="date" 
+              id="date" 
+              [ngClass]="{'value': date!=='', 'error': error  }" 
+              [(ngModel)]="date"/>
+          <hr>
+        </div>
+        <div class="form-group">
+          <label id="genLabel" >Gender : </label>
+          <div id="radioDiv">
+              <input 
+              type="radio" 
+              id="gen-male"
+              name="gender"
+              [(ngModel)]="gender"
+              value="male" />
+          <span for="gen-male" id="gen-male-label">Male</span>
+          <input 
+            type="radio" 
+            id="gen-female"
+            name="gender"
+            [(ngModel)]="gender"
+            value="female" />
+          <span for="gen-neutral" id="gen-female-label">Female</span>
+          <input 
+            type="radio" 
+            id="gen-neutral"
+            name="gender"
+            [(ngModel)]="gender"
+            value="neutral" />
+          <span for="gen-female" id="gen-neutral-label">Prefer Not to Say</span>
+          </div>
+          <hr>
+        </div>
+        <div class="form-group">
+            <button id="submitButton" class="backButton" (click)="prevStep()" [attr.disabled]="disable ? '' : null" >
+                <span id="submitText"> &lt;- Back</span>
+            </button>
+            <button id="submitButton" class="submitButton" (click)="submitEvent()" [attr.disabled]="disable ? '' : null" >
+                <span id="submitText" *ngIf="!formFetch">Submit</span>
+                <span id="submitLoad" *ngIf="formFetch"></span>
+            </button>
+        </div>
+    </div>
+  </div>
+</div>
+

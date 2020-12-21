@@ -1,0 +1,18 @@
+<app-home-layout></app-home-layout>
+
+<app-navbar></app-navbar>
+
+<div 
+    id="pageRoute"
+    [ngClass]="{'pageRouteShow': pageRouteBool.filOpen, 'pageRouteHide': !pageRouteBool.filOpen}">
+    <div id="pageHeader">
+        <div id="backButton" (click)="backButton()">
+            <img src="../../../assets/left-arrow.png" alt="back but">
+        </div>
+        <div id="centerMsg" class="fontSubHead">Welcome, {{this.state.user.firstName}}!</div>
+        <div id="profileDiv" (click)="profileClick()">
+            <img src="../../../assets/user.png" alt="default user">
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

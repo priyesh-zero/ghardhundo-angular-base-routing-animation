@@ -1,0 +1,52 @@
+<div id="hamBurgerContainer">
+    <input 
+        type="checkbox" 
+        id="hamCheck" 
+        [(ngModel)]="showNav">
+    <div id="hamBurger">
+        <div></div>
+    </div>
+</div>
+
+<nav 
+    id="navbarContainer" 
+    [ngClass]="{ showNav : showNav }"
+    >
+    <div id="navbar">
+            <div id="serviceLinks">
+                    <div class="linkHead">
+                            <h2 class="fontHead">Services : </h2>
+                    </div>
+                    <div class="links">
+                        <a class="fontSubHead" (click)="toggleNav();homePage.navigateClick('homes')" [ngClass]="{active: homePage.pageRouteBool.home}">Homes</a>
+                        <a class="fontSubHead" (click)="toggleNav();homePage.navigateClick('cooks')" [ngClass]="{active: homePage.pageRouteBool.cook}">Cooks</a>
+                        <a class="fontSubHead" (click)="toggleNav();homePage.navigateClick('maids')" [ngClass]="{active: homePage.pageRouteBool.maid}">Maids</a>
+                    </div>
+                </div>
+                <div id="userLinks" *ngIf="this.state.user.signIn">
+                    <div class="linkHead">
+                            <h2 class="fontHead">Traditional Links : </h2>
+                    </div>
+                    <div class="links">
+                        <a class="fontSubHead">Profile</a>
+                        <a class="fontSubHead">Dashboard</a>
+                        <a class="fontSubHead">About Us</a>
+                        <a class="fontSubHead">Contact Us</a>
+                        <a class="fontSubHead" (click)="toggleNav();state.logout()">Logout</a>
+                    </div>
+                </div>
+                <div id="guestLinks" *ngIf="!this.state.user.signIn">
+                    <div class="linkHead">
+                            <h2 class="fontHead">Traditional Links : </h2>
+                    </div>
+                    <div class="links">
+                        <a class="fontSubHead" (click)="toggleNav();homePage.navigateClick('login')" [ngClass]="{active: homePage.pageRouteBool.login}">Sign In</a>
+                        <a class="fontSubHead" (click)="toggleNav();homePage.navigateClick('register')" [ngClass]="{active: homePage.pageRouteBool.register}">Register</a>
+                        <a class="fontSubHead">About Us</a>
+                        <a class="fontSubHead">Contact Us</a>
+                    </div>
+                </div>
+    </div>
+</nav>
+
+

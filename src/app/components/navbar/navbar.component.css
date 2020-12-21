@@ -1,0 +1,136 @@
+#hamBurgerContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    transform: scale(0.75);
+    z-index: 3;
+}
+
+#hamBurgerContainer:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#hamBurger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0.25rem;
+    transition: all 0.5s;
+    /* border: 1px solid #fff; */
+}
+
+#hamCheck:checked ~ #hamBurger {
+    transform: rotate(135deg);
+}
+
+#hamCheck {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    z-index: 2;
+}
+
+#hamBurger > div {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+
+#hamBurger > div::after, #hamBurger > div::before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+}
+
+#hamCheck:checked ~ #hamBurger > div::after, 
+#hamCheck:checked ~ #hamBurger > div::before {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#hamBurger > div::before {
+    top: -10px;
+}
+
+nav {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    transform: scale(0);
+    transition: all 0.5s;
+    z-index: 2;
+}
+
+.showNav {
+    top: 0;
+    transform: scale(1);
+}
+
+#navbar {
+    max-width: 1500px;
+    margin: auto;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+
+nav div {
+    flex-grow: 1;
+    padding: 1rem;
+    color: #fff;
+}
+
+a {
+    border: 1px solid #FFF;
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+    transition: background-color 0.5s;
+    cursor: pointer;
+    max-width: 300px;
+    margin: auto;
+    width: 100%;
+}
+
+.links { 
+    display: grid;
+    grid-row-gap: 1rem;
+ }
+
+a:hover, .active {
+    color: rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+}
+
+@media only screen and (min-width: 600px)  {
+/*     
+    .links {
+        display: flex;
+        flex-direction: row;
+    } */
+
+    .linkHead {
+        text-align: center;
+    }
+}
